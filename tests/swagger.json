@@ -1,0 +1,3482 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.18.0-M2",
+    "title": "CPE Management Service API"
+  },
+  "basePath": "/api/v1/",
+  "paths": {
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/bsses/private": {
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify private BSSes",
+        "operationId": "putResourcesTenantsCpesManagementWifiBssesPrivate-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifyBsses»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifyBsses»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/schedules/rules/{schedulerRuleId}": {
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify WiFi scheduler ACL rule",
+        "operationId": "putResourcesTenantsCpesManagementWifiSchedulesRules-tenantId-cpeId-schedulerRuleId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "schedulerRuleId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifySchedulerAclRule»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifySchedulerAclRule»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": ["CPE Management"],
+        "summary": "Delete WiFi scheduler ACL rule",
+        "operationId": "deleteResourcesTenantsCpesManagementWifiSchedulesRules-tenantId-cpeId-schedulerRuleId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "schedulerRuleId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wps": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get WPS",
+        "operationId": "getResourcesTenantsCpesManagementWps-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wpses»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wpses»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wpses»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wpses»"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify WPS",
+        "operationId": "putResourcesTenantsCpesManagementWps-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifyWps»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifyWps»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/scheduler": {
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify scheduler ACL",
+        "operationId": "putResourcesTenantsCpesManagementWifiScheduler-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifySchedulerAcl»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifySchedulerAcl»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/cpe": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get CPE info",
+        "operationId": "getResourcesTenantsCpesManagementCpe-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Cpe»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Cpe»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Cpe»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Cpe»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/accounts/{accountNumber}/cpe-ids": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get CPE IDs",
+        "operationId": "getResourcesTenantsAccountsCpe-ids-tenantId-accountNumber",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«CpeIds»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«CpeIds»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«CpeIds»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«CpeIds»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wps/pairing": {
+      "post": {
+        "tags": ["CPE Management"],
+        "summary": "Start WPS pairing",
+        "operationId": "postResourcesTenantsCpesManagementWpsPairing-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/radio": {
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify WiFi radio",
+        "operationId": "putResourcesTenantsCpesManagementWifiRadio-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifyWifiRadio»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifyWifiRadio»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/ip-address/{ipAddress}/active": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Check IP active status",
+        "operationId": "getResourcesTenantsCpesManagementIp-addressActive-tenantId-cpeId-ipAddress",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«IpActiveMatchingResult»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«IpActiveMatchingResult»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«IpActiveMatchingResult»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«IpActiveMatchingResult»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/schedules": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get WiFi schedules",
+        "operationId": "getResourcesTenantsCpesManagementWifiSchedules-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«WifiSchedules»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«WifiSchedules»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«WifiSchedules»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«WifiSchedules»"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": ["CPE Management"],
+        "summary": "Add WiFi schedule rule",
+        "operationId": "postResourcesTenantsCpesManagementWifiSchedules-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«AddWifiScheduleRule»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«AddWifiScheduleRule»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/esses/private": {
+      "post": {
+        "tags": ["CPE Management"],
+        "summary": "Add private ESS",
+        "operationId": "postResourcesTenantsCpesManagementWifiEssesPrivate-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«AddEss»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«AddEss»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify private ESS",
+        "operationId": "putResourcesTenantsCpesManagementWifiEssesPrivate-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifyEss»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifyEss»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": ["CPE Management"],
+        "summary": "Delete private ESS",
+        "operationId": "deleteResourcesTenantsCpesManagementWifiEssesPrivate-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/devices": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get devices list",
+        "operationId": "getResourcesTenantsCpesManagementDevices-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Devices»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Devices»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Devices»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Devices»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/acl/profiles/wifi/{wifiRadioId}/bsses/{serviceSetId}/rules/{aclRuleId}": {
+      "delete": {
+        "tags": ["CPE Management"],
+        "summary": "Delete ACL profile",
+        "operationId": "deleteResourcesTenantsCpesManagementWifiAclProfilesWifiBssesRules-tenantId-cpeId-wifiRadioId-serviceSetId-aclRuleId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "wifiRadioId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "serviceSetId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "aclRuleId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/leds": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get LEDs info",
+        "operationId": "getResourcesTenantsCpesManagementLeds-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Leds»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Leds»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Leds»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Leds»"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify LEDs",
+        "operationId": "putResourcesTenantsCpesManagementLeds-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifyLeds»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifyLeds»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/esses/guest": {
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify guest ESS",
+        "operationId": "putResourcesTenantsCpesManagementWifiEssesGuest-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifyEss»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifyEss»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/bsses/guest": {
+      "put": {
+        "tags": ["CPE Management"],
+        "summary": "Modify guest BSSes",
+        "operationId": "putResourcesTenantsCpesManagementWifiBssesGuest-tenantId-cpeId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«ModifyBsses»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«ModifyBsses»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/network": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get network summary",
+        "operationId": "getResourcesTenantsCpesManagementNetwork-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Network»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Network»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Network»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Network»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get WiFi info",
+        "operationId": "getResourcesTenantsCpesManagementWifi-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wifi»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wifi»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wifi»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Wifi»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/super-wifi": {
+      "get": {
+        "tags": ["CPE Management"],
+        "summary": "Get SuperWifi info",
+        "operationId": "getResourcesTenantsCpesManagementSuper-wifi-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«SuperWifi»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«SuperWifi»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«SuperWifi»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«SuperWifi»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi/acl/profiles/wifi/{wifiRadioId}/bsses/{serviceSetId}/rules": {
+      "post": {
+        "tags": ["CPE Management"],
+        "summary": "Add ACL profile rule",
+        "operationId": "postResourcesTenantsCpesManagementWifiAclProfilesWifiBssesRules-tenantId-cpeId-wifiRadioId-serviceSetId-body",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "wifiRadioId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "serviceSetId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "CpeManagementRequest«AddWifiAclProfileRule»",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpeManagementRequest«AddWifiAclProfileRule»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wifi-doctor": {
+      "post": {
+        "tags": ["CPE Management"],
+        "summary": "Wifi Doctor",
+        "operationId": "postResourcesTenantsCpesManagementWifi-doctor-tenantId-cpeId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/CpeManagementResponse«Unit»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "ResponseMetadata": {
+      "type": "object",
+      "required": ["children", "jsonGenerationTime", "operationId", "path"],
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "path": {
+          "type": "string"
+        },
+        "jsonGenerationTime": {
+          "type": "string",
+          "description": "java.time.ZonedDateTime"
+        },
+        "operationId": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "description": "ResponseMetadata"
+    },
+    "ServiceSetStatistics": {
+      "type": "object",
+      "properties": {
+        "receivedBytes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "transmittedBytes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "receivedPackets": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "transmittedPackets": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "description": "ServiceSetStatistics"
+    },
+    "StationStatus": {
+      "type": "object",
+      "properties": {
+        "spatialStreams": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "guardIntervalNs": {
+          "type": "string",
+          "description": "GuardInterval",
+          "enum": ["Auto", "400", "800"]
+        },
+        "physicalRate": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "beamforming": {
+          "type": "boolean"
+        },
+        "receivedSignalStrengthDbm": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bandwidthMhz": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "idle": {
+          "type": "string"
+        },
+        "mcs": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "standard": {
+          "type": "string",
+          "description": "WifiStandard",
+          "enum": ["802.11a", "802.11g", "802.11n", "802.11ac", "802.11b", "Unknown", "802.11ax"]
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        }
+      },
+      "description": "StationStatus"
+    },
+    "CpeManagementResponse«WifiSchedules»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/WifiSchedules"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«WifiSchedules»"
+    },
+    "Hash": {
+      "type": "object",
+      "properties": {
+        "fingerprint": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "description": "HashType",
+          "enum": ["MD5", "SHA-256", "SHA-512"]
+        }
+      },
+      "description": "Hash"
+    },
+    "Wifi": {
+      "type": "object",
+      "properties": {
+        "wifi24Ghz": {
+          "$ref": "#/definitions/WifiRadio"
+        },
+        "wifi50Ghz": {
+          "$ref": "#/definitions/WifiRadio"
+        },
+        "essPrivate": {
+          "$ref": "#/definitions/Ess"
+        },
+        "essCommunity": {
+          "$ref": "#/definitions/Ess"
+        }
+      },
+      "description": "Wifi"
+    },
+    "ModifyEss": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ssid": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bsses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FullBssId"
+          }
+        },
+        "securityMode": {
+          "type": "string",
+          "description": "SecurityMode",
+          "enum": [
+            "WPA2-Enterprise",
+            "WPA3-Personal-Transition",
+            "WEP-64",
+            "WPA-Personal",
+            "WEP-128",
+            "WPA3-Personal",
+            "WPA-WPA2-Enterprise",
+            "WPA3-Enterprise",
+            "WPA2-WPA3-Personal",
+            "WPA-WPA2-Personal",
+            "WPA-Enterprise",
+            "WPA2-Personal",
+            "Open"
+          ]
+        },
+        "securityKey": {
+          "type": "string"
+        },
+        "broadcast": {
+          "type": "boolean"
+        }
+      },
+      "description": "ModifyEss"
+    },
+    "Wpses": {
+      "type": "object",
+      "required": ["wpses"],
+      "properties": {
+        "wpses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Wps"
+          }
+        }
+      },
+      "description": "Wpses"
+    },
+    "IpInterface": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "statistics": {
+          "$ref": "#/definitions/InterfaceStatistics"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "ipV6": {
+          "$ref": "#/definitions/IpV6"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Connected", "Disabled", "Disconnected"]
+        },
+        "physicalInterface": {
+          "type": "string"
+        },
+        "ipV4": {
+          "$ref": "#/definitions/IpV4"
+        }
+      },
+      "description": "IpInterface"
+    },
+    "InterfaceStatistics": {
+      "type": "object",
+      "properties": {
+        "collisions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "receivedErrors": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "receivedBytes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "receivedDropped": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transmittedPackets": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transmittedBytes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transmittedErrors": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transmittedDropped": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "receivedPackets": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "description": "InterfaceStatistics"
+    },
+    "Ess": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ssid": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bsses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FullBssId"
+          }
+        },
+        "id": {
+          "type": "string",
+          "enum": ["Community", "Guest", "Private"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Attached", "Connected", "Detached", "Disconnected"]
+        },
+        "securityMode": {
+          "type": "string",
+          "description": "SecurityMode",
+          "enum": [
+            "WPA2-Enterprise",
+            "WPA3-Personal-Transition",
+            "WEP-64",
+            "WPA-Personal",
+            "WEP-128",
+            "WPA3-Personal",
+            "WPA-WPA2-Enterprise",
+            "WPA3-Enterprise",
+            "WPA2-WPA3-Personal",
+            "WPA-WPA2-Personal",
+            "WPA-Enterprise",
+            "WPA2-Personal",
+            "Open"
+          ]
+        },
+        "securityKey": {
+          "type": "string"
+        },
+        "broadcast": {
+          "type": "boolean"
+        }
+      },
+      "description": "Ess"
+    },
+    "Leds": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "description": "Leds"
+    },
+    "SupportedWifiStandards": {
+      "type": "object",
+      "required": ["802.11a", "802.11ac", "802.11ax", "802.11b", "802.11g", "802.11n"],
+      "properties": {
+        "802.11a": {
+          "type": "boolean"
+        },
+        "802.11g": {
+          "type": "boolean"
+        },
+        "802.11n": {
+          "type": "boolean"
+        },
+        "802.11ac": {
+          "type": "boolean"
+        },
+        "802.11b": {
+          "type": "boolean"
+        },
+        "802.11ax": {
+          "type": "boolean"
+        }
+      },
+      "description": "SupportedWifiStandards"
+    },
+    "CpeManagementRequest«AddEss»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AddEss"
+        }
+      },
+      "description": "CpeManagementRequest«AddEss»"
+    },
+    "Wan": {
+      "type": "object",
+      "properties": {
+        "docsis": {
+          "$ref": "#/definitions/Docsis"
+        },
+        "ethernet": {
+          "$ref": "#/definitions/Ethernet"
+        },
+        "fibre": {
+          "$ref": "#/definitions/Fibre"
+        }
+      },
+      "description": "Wan"
+    },
+    "Ethernet": {
+      "type": "object",
+      "required": ["statistics", "status"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "statistics": {
+          "$ref": "#/definitions/WanStatistics"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bridgeMode": {
+          "type": "string",
+          "description": "BridgeMode",
+          "enum": ["Enabled", "Disabled"]
+        },
+        "status": {
+          "$ref": "#/definitions/EthernetStatus"
+        },
+        "mode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Ethernet", "FastEthernet", "GigabitEthernet"]
+          }
+        },
+        "duplex": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Full", "Half"]
+          }
+        },
+        "energyEfficientEthernet": {
+          "type": "boolean"
+        },
+        "autoNegotiation": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "description": "Ethernet"
+    },
+    "CpeManagementRequest«AddWifiAclProfileRule»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AddWifiAclProfileRule"
+        }
+      },
+      "description": "CpeManagementRequest«AddWifiAclProfileRule»"
+    },
+    "CpeManagementRequest«ModifyWps»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ModifyWps"
+        }
+      },
+      "description": "CpeManagementRequest«ModifyWps»"
+    },
+    "Interface": {
+      "type": "object",
+      "properties": {
+        "interfaceId": {
+          "type": "string"
+        },
+        "deviceCount": {
+          "$ref": "#/definitions/DeviceCount"
+        }
+      },
+      "description": "Interface"
+    },
+    "WifiAclProfileRule": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "macAddress": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "shouldNotify": {
+          "type": "boolean"
+        }
+      },
+      "description": "WifiAclProfileRule"
+    },
+    "Wps": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Disabled", "Idle", "Pairing"]
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["Pbc", "Pin"]
+        },
+        "fullBssId": {
+          "$ref": "#/definitions/FullBssId"
+        },
+        "timeout": {
+          "type": "string",
+          "description": "java.time.Duration"
+        }
+      },
+      "description": "Wps"
+    },
+    "CpeManagementRequest«ModifyEss»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ModifyEss"
+        }
+      },
+      "description": "CpeManagementRequest«ModifyEss»"
+    },
+    "CpeManagementResponse«CpeIds»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/CpeIds"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«CpeIds»"
+    },
+    "EthernetInterface": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/InterfaceName"
+        },
+        {
+          "type": "object",
+          "required": ["ethernetPort"],
+          "properties": {
+            "ethernetPort": {
+              "type": "string"
+            }
+          },
+          "description": "EthernetInterface"
+        }
+      ],
+      "description": "EthernetInterface"
+    },
+    "ModifyBsses": {
+      "type": "object",
+      "properties": {
+        "bss24Ghz": {
+          "$ref": "#/definitions/ModifyBss"
+        },
+        "bss5Ghz": {
+          "$ref": "#/definitions/ModifyBss"
+        }
+      },
+      "description": "ModifyBsses"
+    },
+    "Docsis": {
+      "type": "object",
+      "required": ["statistics", "status"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "statistics": {
+          "$ref": "#/definitions/WanStatistics"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/DocsisStatus"
+        },
+        "mode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "DocsisMode",
+            "enum": ["DOCSIS 3.1", "DOCSIS 3.0"]
+          }
+        }
+      },
+      "description": "Docsis"
+    },
+    "ModifySchedulerAclRule": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bsses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FullBssId"
+          }
+        },
+        "time": {
+          "$ref": "#/definitions/SchedulerAclRuleTime"
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Wednesday", "Monday", "Saturday", "Thursday", "Sunday", "Tuesday", "Friday"]
+          }
+        }
+      },
+      "description": "ModifySchedulerAclRule"
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "ipV4Address": {
+          "type": "string"
+        },
+        "ipV6Address": {
+          "$ref": "#/definitions/IpV6Address"
+        },
+        "macAddress": {
+          "type": "string"
+        }
+      },
+      "description": "Address"
+    },
+    "WifiAcl": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        }
+      },
+      "description": "WifiAcl"
+    },
+    "WifiRadioStatus": {
+      "type": "object",
+      "required": ["statistics"],
+      "properties": {
+        "bandwidthMhz": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "currentChannel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        },
+        "statistics": {
+          "$ref": "#/definitions/ServiceSetStatistics"
+        }
+      },
+      "description": "WifiRadioStatus"
+    },
+    "IpV4": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "broadcast": {
+          "type": "string"
+        },
+        "networkMask": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string",
+          "enum": ["DHCP", "PPP", "Static"]
+        }
+      },
+      "description": "IpV4"
+    },
+    "CpeManagementResponse«Cpe»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Cpe"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«Cpe»"
+    },
+    "Cpe": {
+      "type": "object",
+      "properties": {
+        "interfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IpInterface"
+          }
+        },
+        "wan": {
+          "$ref": "#/definitions/Wan"
+        },
+        "firmwareImages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FirmwareImage"
+          }
+        },
+        "hardware": {
+          "$ref": "#/definitions/Hardware"
+        },
+        "hosts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Host"
+          }
+        }
+      },
+      "description": "Cpe"
+    },
+    "EthernetStatus": {
+      "type": "object",
+      "properties": {
+        "duplex": {
+          "type": "string",
+          "enum": ["Full", "Half"]
+        },
+        "protocol": {
+          "type": "string",
+          "enum": ["Ethernet", "FastEthernet", "GigabitEthernet"]
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        },
+        "uptime": {
+          "type": "string",
+          "description": "java.time.Duration"
+        }
+      },
+      "description": "EthernetStatus"
+    },
+    "AddEss": {
+      "type": "object",
+      "required": ["bsses", "name", "securityKey", "securityMode", "ssid"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ssid": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bsses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FullBssId"
+          }
+        },
+        "securityMode": {
+          "type": "string",
+          "description": "SecurityMode",
+          "enum": [
+            "WPA2-Enterprise",
+            "WPA3-Personal-Transition",
+            "WEP-64",
+            "WPA-Personal",
+            "WEP-128",
+            "WPA3-Personal",
+            "WPA-WPA2-Enterprise",
+            "WPA3-Enterprise",
+            "WPA2-WPA3-Personal",
+            "WPA-WPA2-Personal",
+            "WPA-Enterprise",
+            "WPA2-Personal",
+            "Open"
+          ]
+        },
+        "securityKey": {
+          "type": "string"
+        },
+        "broadcast": {
+          "type": "boolean"
+        }
+      },
+      "description": "AddEss"
+    },
+    "WifiRadio": {
+      "type": "object",
+      "required": ["channels", "status"],
+      "properties": {
+        "capabilities": {
+          "type": "string"
+        },
+        "channels": {
+          "$ref": "#/definitions/Channels"
+        },
+        "name": {
+          "type": "string"
+        },
+        "band": {
+          "type": "string",
+          "enum": ["Band24Ghz", "Band50Ghz"]
+        },
+        "supportedBandwidths": {
+          "$ref": "#/definitions/SupportedBandwidths"
+        },
+        "id": {
+          "type": "string",
+          "enum": ["Band24Ghz", "Band50Ghz"]
+        },
+        "status": {
+          "$ref": "#/definitions/WifiRadioStatus"
+        },
+        "bssPrivate": {
+          "$ref": "#/definitions/Bss"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "supportedStandards": {
+          "$ref": "#/definitions/SupportedWifiStandards"
+        },
+        "bssGuest": {
+          "$ref": "#/definitions/Bss"
+        },
+        "country": {
+          "type": "string",
+          "enum": ["EN", "ES", "PT", "IT", "DE"]
+        }
+      },
+      "description": "WifiRadio"
+    },
+    "ModifyBss": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ssid": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bssid": {
+          "type": "string"
+        },
+        "securityMode": {
+          "type": "string",
+          "description": "SecurityMode",
+          "enum": [
+            "WPA2-Enterprise",
+            "WPA3-Personal-Transition",
+            "WEP-64",
+            "WPA-Personal",
+            "WEP-128",
+            "WPA3-Personal",
+            "WPA-WPA2-Enterprise",
+            "WPA3-Enterprise",
+            "WPA2-WPA3-Personal",
+            "WPA-WPA2-Personal",
+            "WPA-Enterprise",
+            "WPA2-Personal",
+            "Open"
+          ]
+        },
+        "securityKey": {
+          "type": "string"
+        },
+        "broadcast": {
+          "type": "boolean"
+        }
+      },
+      "description": "ModifyBss"
+    },
+    "ModifyWifiRadio": {
+      "type": "object",
+      "properties": {
+        "wifiRadio24Ghz": {
+          "$ref": "#/definitions/WifiRadioConfiguration"
+        },
+        "wifiRadio5Ghz": {
+          "$ref": "#/definitions/WifiRadioConfiguration"
+        }
+      },
+      "description": "ModifyWifiRadio"
+    },
+    "CpeManagementRequest«ModifySchedulerAcl»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ModifySchedulerAcl"
+        }
+      },
+      "description": "CpeManagementRequest«ModifySchedulerAcl»"
+    },
+    "Devices": {
+      "type": "object",
+      "properties": {
+        "wifiAcl": {
+          "$ref": "#/definitions/WifiAcl"
+        },
+        "wifiAclProfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Profile"
+          }
+        },
+        "wifi50Ghz": {
+          "$ref": "#/definitions/WifiBssStations"
+        },
+        "hosts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Host"
+          }
+        },
+        "wifi24Ghz": {
+          "$ref": "#/definitions/WifiBssStations"
+        }
+      },
+      "description": "Devices"
+    },
+    "CpeManagementRequest«ModifySchedulerAclRule»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ModifySchedulerAclRule"
+        }
+      },
+      "description": "CpeManagementRequest«ModifySchedulerAclRule»"
+    },
+    "ModifyLeds": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "description": "ModifyLeds"
+    },
+    "InterfaceName": {
+      "type": "object",
+      "required": ["type"],
+      "discriminator": "type",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "EthernetInterface",
+            "BssInterfaceWithoutKnownServiceSetId",
+            "EssInterface",
+            "UsbInterface",
+            "BssInterface"
+          ]
+        }
+      },
+      "description": "InterfaceName"
+    },
+    "Network": {
+      "type": "object",
+      "required": ["wifi24Ghz", "wifi50Ghz"],
+      "properties": {
+        "hostManager": {
+          "$ref": "#/definitions/HostManager"
+        },
+        "wifi24Ghz": {
+          "$ref": "#/definitions/WifiRadioBsses"
+        },
+        "wifi50Ghz": {
+          "$ref": "#/definitions/WifiRadioBsses"
+        },
+        "wan": {
+          "$ref": "#/definitions/Wan"
+        }
+      },
+      "description": "Network"
+    },
+    "CpeManagementResponse«Devices»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Devices"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«Devices»"
+    },
+    "FullBssId": {
+      "type": "object",
+      "required": ["serviceSetId", "wifiRadioId"],
+      "properties": {
+        "wifiRadioId": {
+          "type": "string",
+          "enum": ["Band24Ghz", "Band50Ghz"]
+        },
+        "serviceSetId": {
+          "type": "string",
+          "enum": ["Community", "Guest", "Private"]
+        }
+      },
+      "description": "FullBssId"
+    },
+    "WifiSchedules": {
+      "type": "object",
+      "required": ["rules"],
+      "properties": {
+        "acl": {
+          "$ref": "#/definitions/SchedulerAcl"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SchedulerAclRule"
+          }
+        }
+      },
+      "description": "WifiSchedules"
+    },
+    "SchedulerAclRuleTime": {
+      "type": "object",
+      "required": ["end", "start"],
+      "properties": {
+        "start": {
+          "type": "string",
+          "description": "java.time.LocalTime"
+        },
+        "end": {
+          "type": "string",
+          "description": "java.time.LocalTime"
+        }
+      },
+      "description": "SchedulerAclRuleTime"
+    },
+    "SyncSpeed": {
+      "type": "object",
+      "properties": {
+        "downstreamBps": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "upstreamBps": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "description": "SyncSpeed"
+    },
+    "ModifySchedulerAcl": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["Blacklist", "Whitelist"]
+        }
+      },
+      "description": "ModifySchedulerAcl"
+    },
+    "SupportedBandwidths": {
+      "type": "object",
+      "required": ["160", "20", "40", "80", "80Plus80", "auto"],
+      "properties": {
+        "20": {
+          "type": "boolean"
+        },
+        "40": {
+          "type": "boolean"
+        },
+        "80": {
+          "type": "boolean"
+        },
+        "160": {
+          "type": "boolean"
+        },
+        "auto": {
+          "type": "boolean"
+        },
+        "80Plus80": {
+          "type": "boolean"
+        }
+      },
+      "description": "SupportedBandwidths"
+    },
+    "Profile": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "serviceSetId": {
+          "type": "string",
+          "enum": ["Community", "Guest", "Private"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WifiAclProfileRule"
+          }
+        },
+        "shouldNotify": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["Blacklist", "Steerlist", "Whitelist"]
+        },
+        "wifiRadioId": {
+          "type": "string",
+          "enum": ["Band24Ghz", "Band50Ghz"]
+        }
+      },
+      "description": "Profile"
+    },
+    "FibreStatus": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": ["Gpon"]
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        },
+        "uptime": {
+          "type": "string",
+          "description": "java.time.Duration"
+        }
+      },
+      "description": "FibreStatus"
+    },
+    "DeviceCount": {
+      "type": "object",
+      "properties": {
+        "offlineCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "onlineCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "description": "DeviceCount"
+    },
+    "AddWifiAclProfileRule": {
+      "type": "object",
+      "required": ["mac", "name"],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "mac": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "shouldNotify": {
+          "type": "boolean"
+        }
+      },
+      "description": "AddWifiAclProfileRule"
+    },
+    "ModifyWps": {
+      "type": "object",
+      "required": ["fullBssId"],
+      "properties": {
+        "fullBssId": {
+          "$ref": "#/definitions/FullBssId"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["Pbc", "Pin"]
+        }
+      },
+      "description": "ModifyWps"
+    },
+    "FirmwareImage": {
+      "type": "object",
+      "properties": {
+        "releaseDate": {
+          "type": "string",
+          "description": "java.time.LocalDateTime"
+        },
+        "variant": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Inactive", "Other", "Downloading", "Error", "Completed", "Loading", "Active"]
+        },
+        "source": {
+          "$ref": "#/definitions/Source"
+        },
+        "downloadTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "description": "FirmwareImage"
+    },
+    "CpeManagementResponse«Leds»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Leds"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«Leds»"
+    },
+    "WifiRadioConfiguration": {
+      "type": "object",
+      "properties": {
+        "channels": {
+          "$ref": "#/definitions/Channels"
+        },
+        "name": {
+          "type": "string"
+        },
+        "standard": {
+          "type": "string",
+          "description": "WifiStandard",
+          "enum": ["802.11a", "802.11g", "802.11n", "802.11ac", "802.11b", "Unknown", "802.11ax"]
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bandwidth": {
+          "type": "string",
+          "enum": ["Width160Mhz", "Auto", "Width40Mhz", "Width80_plus_80Mhz", "Width20Mhz", "Width80Mhz"]
+        },
+        "country": {
+          "type": "string",
+          "enum": ["EN", "ES", "PT", "IT", "DE"]
+        }
+      },
+      "description": "WifiRadioConfiguration"
+    },
+    "BssInterfaceWithoutKnownServiceSetId": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/InterfaceName"
+        },
+        {
+          "type": "object",
+          "required": ["serviceSetId", "wifiRadioId"],
+          "properties": {
+            "wifiRadioId": {
+              "type": "string",
+              "enum": ["Band24Ghz", "Band50Ghz"]
+            },
+            "serviceSetId": {
+              "type": "string"
+            }
+          },
+          "description": "BssInterfaceWithoutKnownServiceSetId"
+        }
+      ],
+      "description": "BssInterfaceWithoutKnownServiceSetId"
+    },
+    "WifiRadioBsses": {
+      "type": "object",
+      "properties": {
+        "bssPrivate": {
+          "$ref": "#/definitions/Bss"
+        },
+        "bssGuest": {
+          "$ref": "#/definitions/Bss"
+        }
+      },
+      "description": "WifiRadioBsses"
+    },
+    "Source": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "hash": {
+          "$ref": "#/definitions/Hash"
+        },
+        "port": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "address": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string",
+          "enum": ["Http", "Tftp", "Fs", "Https", "Ftp"]
+        }
+      },
+      "description": "Source"
+    },
+    "EssInterface": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/InterfaceName"
+        },
+        {
+          "type": "object",
+          "required": ["serviceSetId"],
+          "properties": {
+            "serviceSetId": {
+              "type": "string",
+              "enum": ["Community", "Guest", "Private"]
+            }
+          },
+          "description": "EssInterface"
+        }
+      ],
+      "description": "EssInterface"
+    },
+    "Fibre": {
+      "type": "object",
+      "required": ["statistics"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "statistics": {
+          "$ref": "#/definitions/WanStatistics"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/FibreStatus"
+        },
+        "mode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Gpon"]
+          }
+        }
+      },
+      "description": "Fibre"
+    },
+    "UsbInterface": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/InterfaceName"
+        },
+        {
+          "type": "object",
+          "description": "UsbInterface"
+        }
+      ],
+      "description": "UsbInterface"
+    },
+    "BssInterface": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/InterfaceName"
+        },
+        {
+          "type": "object",
+          "required": ["fullBssId"],
+          "properties": {
+            "fullBssId": {
+              "$ref": "#/definitions/FullBssId"
+            }
+          },
+          "description": "BssInterface"
+        }
+      ],
+      "description": "BssInterface"
+    },
+    "HostManager": {
+      "type": "object",
+      "properties": {
+        "history": {
+          "type": "boolean"
+        },
+        "deviceCount": {
+          "$ref": "#/definitions/DeviceCount"
+        },
+        "hosts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Host"
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        },
+        "wifiDeviceCount": {
+          "$ref": "#/definitions/DeviceCount"
+        },
+        "ethernetSwitchDeviceCount": {
+          "$ref": "#/definitions/DeviceCount"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "usbDeviceCount": {
+          "$ref": "#/definitions/DeviceCount"
+        }
+      },
+      "description": "HostManager"
+    },
+    "HostStatistics": {
+      "type": "object",
+      "properties": {
+        "devices": {
+          "$ref": "#/definitions/DeviceCount"
+        },
+        "interfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Interface"
+          }
+        }
+      },
+      "description": "HostStatistics"
+    },
+    "WifiBssStations": {
+      "type": "object",
+      "properties": {
+        "bssPrivate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Station"
+          }
+        },
+        "bssGuest": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Station"
+          }
+        }
+      },
+      "description": "WifiBssStations"
+    },
+    "SchedulerAclRule": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bsses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FullBssId"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "time": {
+          "$ref": "#/definitions/SchedulerAclRuleTime"
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Wednesday", "Monday", "Saturday", "Thursday", "Sunday", "Tuesday", "Friday"]
+          }
+        }
+      },
+      "description": "SchedulerAclRule"
+    },
+    "CpeManagementRequest«AddWifiScheduleRule»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AddWifiScheduleRule"
+        }
+      },
+      "description": "CpeManagementRequest«AddWifiScheduleRule»"
+    },
+    "DocsisStatus": {
+      "type": "object",
+      "properties": {
+        "signalNoiseRatioDb": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Error"]
+        },
+        "syncSpeed": {
+          "$ref": "#/definitions/SyncSpeed"
+        },
+        "uptime": {
+          "type": "string",
+          "description": "java.time.Duration"
+        },
+        "protocol": {
+          "type": "string",
+          "description": "DocsisMode",
+          "enum": ["DOCSIS 3.1", "DOCSIS 3.0"]
+        }
+      },
+      "description": "DocsisStatus"
+    },
+    "CpeManagementResponse«Wpses»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Wpses"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«Wpses»"
+    },
+    "CpeManagementRequest«ModifyWifiRadio»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ModifyWifiRadio"
+        }
+      },
+      "description": "CpeManagementRequest«ModifyWifiRadio»"
+    },
+    "Channels": {
+      "type": "object",
+      "properties": {
+        "supportedChannels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "preferred": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "selectionMode": {
+          "type": "string",
+          "enum": ["Automatic", "Manual"]
+        },
+        "selectionTimer": {
+          "type": "string",
+          "description": "java.time.Duration"
+        }
+      },
+      "description": "Channels"
+    },
+    "SchedulerAcl": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["Blacklist", "Whitelist"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Active", "Disabled", "Enabled", "Error"]
+        }
+      },
+      "description": "SchedulerAcl"
+    },
+    "CpeIds": {
+      "type": "object",
+      "required": ["cpeIds"],
+      "properties": {
+        "cpeIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "CpeIds"
+    },
+    "AddWifiScheduleRule": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bsses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FullBssId"
+          }
+        },
+        "time": {
+          "$ref": "#/definitions/SchedulerAclRuleTime"
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Wednesday", "Monday", "Saturday", "Thursday", "Sunday", "Tuesday", "Friday"]
+          }
+        }
+      },
+      "description": "AddWifiScheduleRule"
+    },
+    "Bss": {
+      "type": "object",
+      "required": ["statistics"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "statistics": {
+          "$ref": "#/definitions/ServiceSetStatistics"
+        },
+        "ssid": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "bssid": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "enum": ["Community", "Guest", "Private"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Attached", "Connected", "Detached", "Disconnected"]
+        },
+        "stations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Station"
+          }
+        },
+        "securityMode": {
+          "type": "string",
+          "description": "SecurityMode",
+          "enum": [
+            "WPA2-Enterprise",
+            "WPA3-Personal-Transition",
+            "WEP-64",
+            "WPA-Personal",
+            "WEP-128",
+            "WPA3-Personal",
+            "WPA-WPA2-Enterprise",
+            "WPA3-Enterprise",
+            "WPA2-WPA3-Personal",
+            "WPA-WPA2-Personal",
+            "WPA-Enterprise",
+            "WPA2-Personal",
+            "Open"
+          ]
+        },
+        "securityKey": {
+          "type": "string"
+        },
+        "broadcast": {
+          "type": "boolean"
+        }
+      },
+      "description": "Bss"
+    },
+    "HostStatus": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": ["Blocked", "Offline", "Online", "Pending"]
+        },
+        "time": {
+          "$ref": "#/definitions/Time"
+        }
+      },
+      "description": "HostStatus"
+    },
+    "CpeManagementResponse«SuperWifi»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/SuperWifi"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«SuperWifi»"
+    },
+    "IpV6": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/IpV6Address"
+        },
+        "prefix": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string",
+          "enum": ["DHCP", "PPP", "Static"]
+        }
+      },
+      "description": "IpV6"
+    },
+    "CpeManagementResponse«Unit»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Unit"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«Unit»"
+    },
+    "CpeManagementResponse«Wifi»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Wifi"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«Wifi»"
+    },
+    "IpV6Address": {
+      "type": "object",
+      "properties": {
+        "globalAddress": {
+          "type": "string"
+        },
+        "linkLocalAddress": {
+          "type": "string"
+        }
+      },
+      "description": "IpV6Address"
+    },
+    "Unit": {
+      "type": "object",
+      "description": "Unit"
+    },
+    "Station": {
+      "type": "object",
+      "required": ["statistics", "status"],
+      "properties": {
+        "statistics": {
+          "$ref": "#/definitions/ServiceSetStatistics"
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/StationStatus"
+        },
+        "macTransmitter": {
+          "type": "string"
+        },
+        "macHost": {
+          "type": "string"
+        },
+        "beamformingCapability": {
+          "type": "boolean"
+        }
+      },
+      "description": "Station"
+    },
+    "Hardware": {
+      "type": "object",
+      "properties": {
+        "serialNumber": {
+          "type": "string"
+        },
+        "casingColour": {
+          "type": "string",
+          "enum": ["Black", "White"]
+        },
+        "model": {
+          "type": "string"
+        },
+        "friendlyName": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string"
+        },
+        "productClass": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "macAddress": {
+          "type": "string"
+        },
+        "carrier": {
+          "type": "string",
+          "enum": ["KabelDeutschland", "UnityMedia", "Vodafone"]
+        }
+      },
+      "description": "Hardware"
+    },
+    "WanStatistics": {
+      "type": "object",
+      "properties": {
+        "receivedBytes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "transmittedBytes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "receivedFrames": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "transmittedFrames": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "description": "WanStatistics"
+    },
+    "Host": {
+      "type": "object",
+      "required": ["address"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "statistics": {
+          "$ref": "#/definitions/HostStatistics"
+        },
+        "interface": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/HostStatus"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["Tablet", "Phone", "Laptop", "Tv", "Unknown", "Router", "Extender", "Console"]
+        }
+      },
+      "description": "Host"
+    },
+    "SuperWifi": {
+      "type": "object",
+      "properties": {
+        "controlMode": {
+          "type": "string",
+          "description": "ControlMode",
+          "enum": ["Dormant", "Passive", "Passive+", "Active"]
+        }
+      },
+      "description": "SuperWifi"
+    },
+    "CpeManagementRequest«ModifyBsses»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ModifyBsses"
+        }
+      },
+      "description": "CpeManagementRequest«ModifyBsses»"
+    },
+    "Time": {
+      "type": "object",
+      "properties": {
+        "connected": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "idle": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "description": "Time"
+    },
+    "CpeManagementRequest«ModifyLeds»": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ModifyLeds"
+        }
+      },
+      "description": "CpeManagementRequest«ModifyLeds»"
+    },
+    "CpeManagementResponse«IpActiveMatchingResult»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "type": "string",
+          "enum": ["BehindDifferentCpe", "DsLitePortMatchingProblem", "IpMatched", "OutsideOfNetwork"]
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«IpActiveMatchingResult»"
+    },
+    "CpeManagementResponse«Network»": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Network"
+        },
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetadata"
+        }
+      },
+      "description": "CpeManagementResponse«Network»"
+    }
+  }
+}
