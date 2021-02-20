@@ -1,5 +1,6 @@
 import json
 import os
+from typing import Optional
 
 import jmespath
 import pytest
@@ -119,3 +120,38 @@ def test_get_responses_from_api_spec(
             stream.write(json.dumps(schema, indent=4, sort_keys=True))
         elif suffix in ("yml", "yaml"):
             yaml.dump(data=schema, stream=stream)
+
+
+def normalized_path_parts(path: str) -> list[str]:
+    """splits path in its parts and removes empty parts"""
+    return [part for part in path.split("/") if part]
+
+
+def path_matches(spec_path_parts: list[str], path_parts: list[str]) -> bool:
+    for spec_path_part, path_part in zip(spec_path_parts, path_parts):
+        is_template_part = spec_path_part.startswith("{") and spec_path_part.endswith("}")
+        if not is_template_part:  # ignore templates
+            if spec_path_part != path_part:
+                return False
+    return True
+
+
+def find_spec_path(spec_paths: list[str], path: str) -> Optional[str]:
+    path_parts = normalized_path_parts(path)
+    for spec_path in spec_paths:
+        spec_path_parts = normalized_path_parts(spec_path)
+        if len(spec_path_parts) == len(path_parts):
+            if path_matches(spec_path_parts=spec_path_parts, path_parts=path_parts):
+                return spec_path
+    return None
+
+
+def test_path_match():
+    parser = ResolvingParser("../swagger.json")
+    spec = parser.specification
+    spec_paths = jmespath.search(
+        expression="paths | keys(@)",
+        data=spec,
+    )
+    match = find_spec_path(spec_paths=spec_paths, path="/resources/tenants/123/cpes/456/management/wps")
+    assert match == "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wps"
