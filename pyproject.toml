@@ -8,6 +8,7 @@ authors = ["Gerrit Schrader <gerrit.schrader@gmail.com>"]
 python = "^3.9"
 prance = "^0.20.2"
 openapi-spec-validator = "^0.2.9"
+jmespath = "^0.10.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6"
