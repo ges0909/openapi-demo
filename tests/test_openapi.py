@@ -5,6 +5,7 @@ from typing import Optional
 import jmespath
 import pytest
 import yaml
+from jsonschema import validate, ValidationError
 from prance import ResolvingParser
 
 
@@ -122,36 +123,61 @@ def test_get_responses_from_api_spec(
             yaml.dump(data=schema, stream=stream)
 
 
-def normalized_path_parts(path: str) -> list[str]:
-    """splits path in its parts and removes empty parts"""
-    return [part for part in path.split("/") if part]
+# --
+
+
+def get_normalized_path_parts(path: str) -> list[str]:
+    """splits path and removes empty parts resulting from leading/trailing and multiple slashes"""
+    parts = path.split("/")
+    return [part for part in parts if part]
 
 
 def path_matches(spec_path_parts: list[str], path_parts: list[str]) -> bool:
+    """checks each path part on equality; parts containing a template are ingnored"""
     for spec_path_part, path_part in zip(spec_path_parts, path_parts):
-        is_template_part = spec_path_part.startswith("{") and spec_path_part.endswith("}")
-        if not is_template_part:  # ignore templates
+        is_template = spec_path_part.startswith("{") and spec_path_part.endswith("}")
+        if not is_template:
             if spec_path_part != path_part:
                 return False
     return True
 
 
 def find_spec_path(spec_paths: list[str], path: str) -> Optional[str]:
-    path_parts = normalized_path_parts(path)
+    path_parts = get_normalized_path_parts(path)
     for spec_path in spec_paths:
-        spec_path_parts = normalized_path_parts(spec_path)
+        spec_path_parts = get_normalized_path_parts(spec_path)
         if len(spec_path_parts) == len(path_parts):
             if path_matches(spec_path_parts=spec_path_parts, path_parts=path_parts):
                 return spec_path
     return None
 
 
-def test_path_match():
+def test_find_matching_spec_path():
     parser = ResolvingParser("../swagger.json")
     spec = parser.specification
     spec_paths = jmespath.search(
         expression="paths | keys(@)",
         data=spec,
     )
-    match = find_spec_path(spec_paths=spec_paths, path="/resources/tenants/123/cpes/456/management/wps")
-    assert match == "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wps"
+    matching_spec_path = find_spec_path(spec_paths=spec_paths, path="/resources/tenants/123/cpes/456/management/wps")
+    assert matching_spec_path == "/resources/tenants/{tenantId}/cpes/{cpeId}/management/wps"
+
+
+# --
+
+
+def test_schema_validation():
+    method = "get"
+    status = "200"
+    parser = ResolvingParser("../swagger.json")
+    spec = parser.specification
+    spec_paths = list(spec["paths"].keys()) if "paths" in spec else []
+    matching_spec_path = find_spec_path(spec_paths=spec_paths, path="/resources/tenants/123/cpes/456/management/wps")
+    path_definition = spec["paths"][matching_spec_path]
+    method_definition = path_definition[method] if method in path_definition else {}
+    schema = method_definition["responses"][status]["schema"] if status in method_definition["responses"] else {}
+    try:
+        validate(instance={}, schema=schema)
+    except ValidationError as error:
+        error = ", ".join([arg for arg in error.args if isinstance(arg, str)])
+        pass
