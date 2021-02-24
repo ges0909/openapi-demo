@@ -166,16 +166,28 @@ def test_find_matching_spec_path():
 # --
 
 
-def test_schema_validation():
-    method = "get"
-    status = "200"
+@pytest.mark.parametrize(
+    ("path", "method", "status"),
+    (
+        (
+            "/resources/tenants/123/cpes/456/management/wps",
+            "get",
+            "200",
+        ),
+    ),
+)
+def test_schema_validation(
+    path: str,
+    method: str,
+    status: str,
+):
     parser = ResolvingParser("../swagger.json")
     spec = parser.specification
     spec_paths = list(spec["paths"].keys()) if "paths" in spec else []
-    spec_path = find_spec_path(spec_paths=spec_paths, path="/resources/tenants/123/cpes/456/management/wps")
-    path_definition = spec["paths"][spec_path]
-    method_definition = path_definition[method] if method in path_definition else {}
-    schema = method_definition["responses"][status]["schema"] if status in method_definition["responses"] else {}
+    spec_path = find_spec_path(spec_paths=spec_paths, path=path)
+    path_def = spec["paths"][spec_path]
+    method_def = path_def[method] if method in path_def else {}
+    schema = method_def["responses"][status]["schema"] if status in method_def["responses"] else {}
     try:
         validate(instance={}, schema=schema)
     except ValidationError as error:
