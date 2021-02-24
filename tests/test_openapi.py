@@ -133,7 +133,7 @@ def get_normalized_path_parts(path: str) -> list[str]:
 
 
 def path_matches(spec_path_parts: list[str], path_parts: list[str]) -> bool:
-    """checks each path part on equality; parts containing a template are ingnored"""
+    """checks each path part on equality; parts containing a template are ignored"""
     for spec_path_part, path_part in zip(spec_path_parts, path_parts):
         is_template = spec_path_part.startswith("{") and spec_path_part.endswith("}")
         if not is_template:
@@ -172,8 +172,8 @@ def test_schema_validation():
     parser = ResolvingParser("../swagger.json")
     spec = parser.specification
     spec_paths = list(spec["paths"].keys()) if "paths" in spec else []
-    matching_spec_path = find_spec_path(spec_paths=spec_paths, path="/resources/tenants/123/cpes/456/management/wps")
-    path_definition = spec["paths"][matching_spec_path]
+    spec_path = find_spec_path(spec_paths=spec_paths, path="/resources/tenants/123/cpes/456/management/wps")
+    path_definition = spec["paths"][spec_path]
     method_definition = path_definition[method] if method in path_definition else {}
     schema = method_definition["responses"][status]["schema"] if status in method_definition["responses"] else {}
     try:
